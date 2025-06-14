@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="io" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Python Input/Output</title>
+
+  <introduction>
+    <p>
+    Python is a very popular programming language used in software 
+    development, web development, cybersecurity, data analysis, AI, and automation, etc. 
+    Python is a great language for beginners to learn because it is easy to read and understand. 
+     In this chapter, we will learn the basics of input and output (I/O) in Python, which are essential for interacting with users and displaying information. </p>
+
+  </introduction>
+
+  <subsection xml:id="print">
+    <title>Output with print()</title>
+
+    <p>The <code>print()</code> function is used to display output to the screen in Python. Inside the parenthesis of the function, you can put in any message in quotes to be printed out, for example:</p>
+ <program language="python">
+      <code>
+print("Hello World!")
+      </code>
+</program>
+        
+        <p>Try running this code in the exercise below. Notice that every Python command to the computer must be on a separate line.
+</p>
+
+    <exercise label="print1">
+    <statement>
+      <p>Run the following code. Then, change "World" to your name and run the code again.
+      </p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+print("Hello World!")
+print("Good bye!")
+      </code>
+      <tests>
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def test1(self):
+            self.assertIn("Hello",self.getOutput(),"Says hello")
+            self.assertNotIn("World",self.getOutput(),"Change World to your name")
+
+    myTests().main()
+      </tests>
+    </program>
+  </exercise>
+    
+
+  <exercise label="printMixedUp" adaptive="yes">
+      <statement>
+        <p>
+          Drag or click on the blocks you need to move them from the top section
+          into the yellow area to create a print statement that will print “Hi!”.
+          There are extra blocks that you don’t need.
+        </p>
+      </statement>
+      <blocks layout="horizontal">
+        <block>
+          <c>print</c>
+        </block>
+        <block>
+          <c>(</c>
+        </block>
+        <block>
+          <c>"Hi!"</c>
+        </block>
+        <block>
+          <c>)</c>
+        </block>
+        <block correct="no">
+          <c>;</c>
+        </block>
+        <block correct="no">
+          <c>Print</c>
+        </block>
+      </blocks>
+    </exercise> 
+
+ 
+    </subsection>
+
+<subsection xml:id="debugging">
+    <title>Debugging</title>
+  
+<p>
+<term>Syntax errors</term> are bugs or mistakes in the way the code is written. 
+For example, the following code has a syntax error because the quotes and parenthesis are not closed. 
+Try running the code and see what happens. Try fixing the errors to <term>debug</term> the code.
+</p>
+<exercise label="debug1">
+    <statement>
+      <p>Run the following code. Fix the errors and run again.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+print("Hello World!
+      </code>
+      <tests>
+    from unittest.gui import TestCaseGui
+    class myTests(TestCaseGui):
+
+        def test1(self):
+            self.assertIn("Hello World!",self.getOutput(),"output")
+    myTests().main()
+      </tests>
+    </program>
+  </exercise>
+</subsection>
+
+
+
+    <subsection xml:id="variables">
+    <title>Variables</title>
+    <p> 
+    <term>Variables</term> are names for memory locations to store values. 
+    In Python, a variable is created when a value is assigned to it. 
+    For example, the following code creates a variable named <c>name</c> 
+    and assigns it the value "Carlos". 
+    Then, it creates a variable named <c>age</c> and assigns it the value <c>20</c>. 
+    Multiple values can be printed out separated by commas. 
+    The variables, name and age, are never put inside quotes because we do not want to 
+    literally print the variable names; we want to print the values stored in the variables.
+</p>
+
+  <exercise label="printVars">
+    <statement>
+      <p>Run the following code. Change the variable values and run again.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+name = "Carlos"
+age = 20
+print(name, " is ", age, " years old.")
+      </code>
+      <tests>
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def test1(self):
+            self.assertIn("years old",self.getOutput(),"output")
+            self.assertNotIn("Carlos",self.getOutput(),"Change Carlos to a different name")
+
+    myTests().main()
+      </tests>
+    </program>
+  </exercise>   
+
+  <exercise label="mixedUpPrintVars" adaptive="yes">
+    <statement>
+      <p>
+        Drag or click on the blocks you need to move them from the top section
+        into the yellow area to create a print statement with the variable <code>name</code>.
+        For example, if <code>name = "Alex"</code>, it will print "Hello Alex!".
+        There are extra blocks that you don't need.
+      </p>
+    </statement>
+    <blocks layout="horizontal">
+      <block>
+        <c>print</c>
+      </block>
+      <block>
+        <c>(</c>
+      </block>
+      <block>
+        <c>"Hello "</c>
+      </block>
+      <block>
+        <c>,</c>
+      </block>
+      <block>
+        <c>name</c>
+      </block>
+      <block>
+        <c>,</c>
+      </block>
+      <block>
+        <c>"!"</c>
+      </block>
+      <block>
+        <c>)</c>
+      </block>
+       <block correct="no">
+        <c>"Hello name!"</c>
+      </block>
+       <block correct="no">
+        <c>"name"</c>
+      </block>
+    </blocks>
+  </exercise>
+
+  </subsection>
+
+  <subsection xml:id="naming">
+    <title>Naming variables</title>
+<p>Although you can name a variable almost anything you want, 
+there are some rules and conventions to follow.
+</p>
+        <p>
+            <ul>
+                <li>
+                    <p>It must start with a letter or an underscore <c>_</c></p>
+                </li>
+                <li>
+                    <p>It can also contain digits, like <c>1</c> or <c>9</c>, just not as the first character</p>
+                </li>
+                <li>
+                    <p>It can’t have spaces, or special symbols other than <c>_</c></p>
+                </li>
+                <li>
+                            It can’t be a Python <term>keyword</term>. Keywords are words that have special
+                                meaning in the language(see below for examples).
+                </li>
+                <li>
+                    <p>Case matters. A variable named <c>result</c> is not the same as one named <c>Result</c>.</p>
+                </li>
+            </ul>
+        </p>
+        <p>Python has a few dozen keywords that you can’t use as variable names. Here is a list of the most common
+            ones. If you ever have an error based on one of your variable names and do not know why, compare your name
+            to this list to make sure you are not using a keyword as your name.</p>
+        <table xml:id="python-keywords">
+            <title>Python keywords</title>
+            <tabular>
+
+                <row>
+                    <cell> and </cell>
+                    <cell> as </cell>
+                    <cell> assert </cell>
+                    <cell> break </cell>
+                    <cell> class </cell>
+                    <cell> continue </cell>
+                </row>
+                <row>
+                    <cell> def </cell>
+                    <cell> del </cell>
+                    <cell> elif </cell>
+                    <cell> else </cell>
+                    <cell> except </cell>
+                    <cell> exec </cell>
+                </row>
+                <row>
+                    <cell> finally </cell>
+                    <cell> for </cell>
+                    <cell> from </cell>
+                    <cell> global </cell>
+                    <cell> if </cell>
+                    <cell> import </cell>
+                </row>
+                <row>
+                    <cell> in </cell>
+                    <cell> is </cell>
+                    <cell> lambda </cell>
+                    <cell> nonlocal </cell>
+                    <cell> not </cell>
+                    <cell> or </cell>
+                </row>
+                <row>
+                    <cell> pass </cell>
+                    <cell> raise </cell>
+                    <cell> return </cell>
+                    <cell> try </cell>
+                    <cell> while </cell>
+                    <cell> with </cell>
+                </row>
+                <row>
+                    <cell> yield </cell>
+                    <cell> True </cell>
+                    <cell> False </cell>
+                    <cell> None </cell>
+                    <cell> </cell>
+                    <cell> </cell>
+                </row>
+
+            </tabular>
+        </table>
+
+        <exercise label="rulesfornames1">
+            <statement>
+                <p>Which of the following is <em>not</em> a legal variable name?</p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement>
+                        <p>_a1</p>
+                    </statement>
+                    <feedback>
+                        <p>You can use an underscore as the first character in a variable name</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>my_name</p>
+                    </statement>
+                    <feedback>
+                        <p>You can use an underscore between words in a variable name.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>amountOfStuff</p>
+                    </statement>
+                    <feedback>
+                        <p>You can use both uppercase and lowercase letters in a variable name.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>BMP</p>
+                    </statement>
+                    <feedback>
+                        <p>You can use only uppercase letters in a variable name.</p>
+                    </feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement>
+                        <p>1A</p>
+                    </statement>
+                    <feedback>
+                        <p>You can't use a digit as the first letter in a variable name.</p>
+                    </feedback>
+                </choice>
+            </choices>
+        </exercise>
+        </subsection>
+
+
+
+  <subsection xml:id="input">
+    <title>Input</title>
+    <p>Python has an <term>input</term> function that can be used to get input from the typed in by user. 
+    This input must be saved into a variable. The syntax for an input statement is:
+    </p>
+   
+    <program language="python">
+      <code>
+variable_name = input("Input prompt or question? ")
+      </code>
+    </program>
+    
+   <p>The following code will ask the user for their name and then print out a greeting. 
+   Try it out by clicking the "Run" button.</p>
+
+<exercise label="input1">
+    <statement>
+      <p>Run the following code. Enter your name in the pop up input box and then scroll down to see the output.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+name = input("What is your name? ")
+print("Hello", name)
+      </code>
+      <tests>
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def test1(self):
+            self.assertIn("Hello",self.getOutput(),"output")
+          
+    myTests().main()
+      </tests>
+    </program>
+  </exercise>
+    
+
+  <exercise label="mixedUpInput" adaptive="yes">
+    <statement>
+      <p>
+        Drag or click on the blocks you need to move them from the top section
+        into the yellow area to create an input statement that will ask for the user's age.
+        There are extra blocks that you don't need.
+      </p>
+    </statement>
+    <blocks layout="horizontal">
+      <block>
+        <c>age</c>
+      </block>
+      <block>
+        <c>=</c>
+      </block>
+      <block>
+        <c>input</c>
+      </block>
+      <block>
+        <c>(</c>
+      </block>
+      <block>
+        <c>"What is your age?"</c>
+      </block>
+      <block>
+        <c>)</c>
+      </block>
+    </blocks>
+  </exercise>
+
+
+ <p> Let's make a poem or a story using input and variables. 
+ Ask the user to input different nouns and verbs, and weave together a story.</p>
+
+
+<project label="madlib">
+<title>Mad Libs Poem</title>
+    <statement>
+      <p>Finish the input statements below to ask the user for 2 colors and a food item. Run to see the silly poem. Then, ask the user for more input words and create your own poem or story using the variables in print statements.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+    # Get user input
+    pluralnoun1 = input("Enter a plural noun: ")
+    pluralnoun2 = input("Enter another plural noun: ")
+    # Complete 3 input statements below 
+    color1 = input(            )
+    color2 = 
+    food = 
+    # create 2 more variables and input statements
+
+    # Run to see the silly poem
+    print("Here's my silly poem!")
+    print("Roses are " + color1)
+    print(pluralnoun1 + " are " + color2)
+    print("I like " + food)
+    print("Do " + pluralnoun2 + " like them too?")
+    # Add at least 2 more lines to the poem
+    # using print and your last 2 variables
+      </code>
+      <tests>
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def test1(self):
+            self.assertIn("I like",self.getOutput(),"output")
+            input_count = self.getEditorText().count("input(")
+            self.assertGreaterEqual(input_count, 7, "at least 7 input statements")
+
+    myTests().main()
+      </tests>
+    </program>
+  </project>
+   
+</subsection>
+
+<subsection xml:id="DataTypes">
+    <title>Data Types and Hungarian Notation</title>
+    <p>In Python, the data type of a variable is determined by the value assigned to it. The <code>input()</code> function always returns a string, even if the user enters a number. For example, if the user enters "25", the variable will be a string containing "25", not the integer 25. But sometimes, you need it to be a number and not a string so that you can do math with it.</p>
+    <p>To convert a string to an integer or a float, you can use the <code>int()</code> or <code>float()</code> functions. We will need this in the next lesson to do math with or compare these variables. For example:</p>  
+    <program language="python">
+      <code>
+sAge = input("Enter your age: ")
+iAge = int(age)  # Convert the string to an integer
+      </code>
+    </program>
+
+    <p><term>Hungarian Notation</term> is a naming convention where the variable name starts with a letter that indicates its data type. For example, you might use <code>s</code> for string, <code>i</code> for integer, and <code>f</code> for float. This can help you remember what type of data the variable holds.</p>
+
+   <p>To convert an int into a string, you can use the <code>str()</code> function. For example:</p>
+    <program language="python">
+      <code>
+sAge = str(iAge)  # Convert the integer back to a string
+      </code>
+    </program>
+    <p>Python has several built-in data types, including:</p>
+    <ul>
+      <li><term>int</term> - for integers (whole numbers)</li>
+      <li><term>float</term> - for floating-point numbers (decimals)</li>
+      <li><term>str</term> - for strings (text)</li>
+      <li><term>bool</term> - for boolean values (True or False)</li>
+    </ul>
+    <p>You can check the data type of a variable using the <code>type()</code> function. For example:</p>
+    <program language="python">
+      <code>   
+print(type(iAge))  # This will print int
+print(type(sAge))  # This will print str
+      </code>
+    </program>
+
+
+<exercise label="dataTypesDebug">
+    <statement>
+      <p>Run the following code to see that there are some errors caused by the data types. Try using int or str functions to convert the variables to the correct data type.</p>
+    </statement>
+    <program interactive="activecode" language="python">
+      <code>
+score = 10
+print("Type of score:", type(score))
+# This will cause an error because score needs to be a string
+print("Score: " + score + " points")  
+bonus = input("Enter the bonus points (5-10): ")  
+print("Type of bonus after input:", type(bonus))
+# This will also cause an error because bonus needs to be an int to be added
+total = score + bonus
+print("Total score: ", total)  
+      </code>
+      <tests>
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def test1(self):
+            self.assertIn("Total score",self.getOutput(),"output"))
+            self.assertIn("int(", self.getEditorText(), "Used int(" )
+            self.assertIn("str(", self.getEditorText(), "Used str(" )
+
+
+    myTests().main()
+      </tests>
+    </program>
+  </exercise>
+  
+  </subsection>  
+
+
+  
+
+<subsection xml:id="ioExercises">
+    <title>I/O Exercises</title>
+    <p>These are mostly borrowed from the CSP and Hello CS books on Runestone.</p>
+    <exercise label="cspnamestrings_exercises1">
+    <statement>
+      <p>There are 2 syntax errors (errors that prevent the code from running) in the following code. 
+        There is also a missing space in one of the strings that will be printed.
+        Fix the code so that it prints exactly this:
+        <q>Your name is Carly and your favorite color is red.</q>.</p>
+    </statement>
+    <program xml:id="cspnamestrings_exercises1_editor" interactive="activecode" language="python">
+      <code>
+        color = "red'
+        name = 'Carly'
+        print("Your name is " + name + and your favorite color is" + color + ".")
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertEqual(color, "red", "Testing that color has the correct value." )
+                self.assertEqual(name, "Carly", "Testing that name has the correct value." )
+                self.assertEqual(self.getOutput().strip(), "Your name is Carly and your favorite color is red.", "Testing output. Make sure you have spaces in all the right places!")
+
+        myTests().main()
+      </tests>
+    </program>
+  </exercise>
+
+  <exercise label="cspnamestrings_exercises2">
+    <statement>
+      <p>You will get an error if you try to run the following code. Fix the code to print correctly without errors. It
+        should print, <em><q>Your name is Carly and your age is 19.</q></em></p>
+      <p>Note: Don’t forget that to turn an <term>int</term> into a string you do something like <c>str(x)</c> where <c>x</c>
+        is the <term>int</term> you want to turn into a string.</p>
+
+    </statement>
+    <program xml:id="cspnamestrings_exercises2_editor" interactive="activecode" language="python">
+      <code>
+        age = 14 + 5
+        name = 'Carly'
+        print("Your name is" + name + "and your age is" + age + ".")
+      </code>
+      <tests>
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+            def testOne(self):
+                self.assertEqual(age, 19, "Testing that age has the correct value." )
+                self.assertEqual(name, "Carly", "Testing that name has the correct value." )
+                self.assertEqual(self.getOutput().strip(), "Your name is Carly and your age is 19.", "Testing that you have the right output - make sure your spaces are correct!")
+                self.assertNotIn("19", self.getEditorText(), "Testing that you didn't hardcode the answer.")
+
+        myTests().main()
+      </tests>
+    </program>
+  </exercise>
+
+        <exercise label="cspnamenumbers_rulesfornames2">
+            <statement>
+
+                <p>Which of the following is <em>not</em> a legal variable name?</p>
+
+            </statement>
+            <choices>
+
+                <choice>
+                    <statement>
+                        <p>_my_name</p>
+                    </statement>
+                    <feedback>
+                        <p>This is legal, but you don't usually start a variable name with an underscore.</p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>my name</p>
+                    </statement>
+                    <feedback>
+                        <p>You can't have a space in a variable name.</p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>myname</p>
+                    </statement>
+                    <feedback>
+                        <p>This may be hard to read, but it is legal.</p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>myName</p>
+                    </statement>
+                    <feedback>
+                        <p>Since you can't have spaces in names, one way to make variable names easier to read is to use
+                            camel case (uppercase the first letter of each new word).</p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>my_name</p>
+                    </statement>
+                    <feedback>
+                        <p>Since you can't have spaces in names, one way to make variable names easier to read is to use
+                            an underscore between two words.</p>
+                    </feedback>
+                </choice>
+            </choices>
+
+        </exercise>
+
+    </subsection>
+</section>

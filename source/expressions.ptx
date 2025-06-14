@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="math" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Python Data Types, Math, and Expressions</title>
+
+  <introduction>
+    <p>Computers are great at math! Let's learn how to make Python do mathematical calculations.  </p>
+  </introduction>
+
+
+ <subsection xml:id="expressions">
+    <title>Expressions</title>
+    <p>In Python, an expression is a combination of values, variables, operators, and function calls that evaluates to a value. For example, the expression <code>2 + 3</code> evaluates to the value <code>5</code>.</p>
+    <p>Expressions can be used in various contexts, such as in assignments, function calls, and control flow statements. For example:</p>
+    <program language="python">
+      <code>
+x = 2 + 3
+print(x)
+      </code>
+    </program>
+    <p>In this example, the expression <code>2 + 3</code> is evaluated and assigned to the variable <code>x</code>, which is then printed.</p>
+  </subsection>
+
+  <subsection xml:id="oprators">
+    <title>Mathematical operators</title>
+    
+    </subsection>
+</section>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Python Functions</title>
+
+  <introduction>
+    <p> Text before the first subsection. </p>
+  </introduction>
+
+  <subsection>
+    <title>Defining Functions</title>
+    <p>Functions are defined using the <code>def</code> keyword, followed by the function name and parentheses.</p>
+    <program language="python"><code>def my_function():
+    print("Hello, World!")</code></program>
+    <p>To call the function, simply use its name followed by parentheses:</p>
+    <program language="python"><code>my_function()</code></program>
+    <p>This will output:</p>
+    <program language="python"><code>Hello, World!</code></program>
+  </subsection>
+  <subsection>
+    <title>Function Parameters</title>
+    <p>Functions can take parameters, which are specified within the parentheses in the function definition.</p>
+    <program language="python"><code>def greet(name):
+    print("Hello, " + name + "!")</code></program>
+    <p>To call this function, pass an argument:</p>
+    <program language="python"><code>greet("Alice")</code></program>
+    <p>This will output:</p>
+    <program language="python"><code>Hello, Alice!</code></program>
+  </subsection>
+  <subsection>
+    <title>Return Values</title>
+    <p>Functions can return values using the <code>return</code> statement.</p>
+    <program language="python"><code>def add(a, b):
+    return a + b</code></program>
+    <p>To use the return value, assign it to a variable:</p>
+    <program language="python"><code>result = add(5, 3)
+print(result)</code></program>
+    <p>This will output:</p>
+    <program language="python"><code>8</code></program>
+  </subsection>
+  
+</section>

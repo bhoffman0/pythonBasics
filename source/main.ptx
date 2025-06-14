@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <book xml:id="pythonbasics">
+    <title>Python Basics</title>
+    
+
+    <!-- Include frontmatter
+    <xi:include href="./frontmatter.ptx" />
+     -->
+
+    <introduction xml:id="introduction">
+      <p>This book is an introduction to Python basics 
+      developed by Beryl Hoffman at Elms College and 
+      Brian Candido at Springfield Technical Community College.</p>
+    </introduction>
+      
+
+    <!-- Include chapters   -->
+    <chapter xml:id="basics">
+      <title>Python Basics</title>
+  
+      <!-- include sections (separate web pages) from files -->
+       <xi:include href="./io.ptx" />
+       <xi:include href="./expressions.ptx" />
+       
+    </chapter>
+
+     <chapter xml:id="control">
+       <title>Python Control Structures</title>
+       
+       <xi:include href="./conditionals.ptx" />
+       <xi:include href="./loops.ptx" />
+     </chapter>
+
+    <chapter xml:id="functions-chapter">
+      <title>Python Functions</title>
+      
+      <xi:include href="./functions.ptx" />
+      </chapter>
+
+    <chapter xml:id="data">
+      <title>Python Data Structures</title>
+   
+       <xi:include href="./lists.ptx" />
+    <!-- 
+    <xi:include href="./dictionaries.ptx" />
+    <xi:include href="./files.ptx" />
+    -->
+     </chapter>  
+
+
+    <!-- Include backmatter -->
+    <xi:include href="./backmatter.ptx" />
+
+  </book>
+</pretext>
